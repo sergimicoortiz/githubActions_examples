@@ -1,6 +1,6 @@
 function main() {
- const a = "test";
-    console.log(a);
+const a = "test";
+                                console.log(a);
 }
 
 main()
