@@ -26,4 +26,4 @@ jobs:
         with:
           node-version: 16
       - run: npm install -D
-      - run: npm run jest
+      - run: npm run test
