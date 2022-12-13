@@ -6,11 +6,6 @@ on:
 jobs:
   linter-execution:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        include:
-          - node: 10
-          - node: 12
     steps:
       - uses: actions/checkout@v2
       - name: Lint Code Base
@@ -25,6 +20,11 @@ jobs:
   test-execution:
     needs: linter-execution
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        include:
+          - node: 10
+          - node: 12
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v3
