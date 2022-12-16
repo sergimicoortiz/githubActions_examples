@@ -28,14 +28,15 @@ jobs:
         continue-on-error: true
       - name: Check on failures
         if: job.steps.test.status == failure()
-        uses: dawidd6/action-send-mail@v3
-        with:
-          server_address: smtp.gmail.com
-          server_port: 465
-          secure: true
-          username: ${{secrets.MAIL_USERNAME}}
-          password: ${{secrets.MAIL_PASSWORD}}
-          subject: Error jest
-          to: sergimicoortiz@gmail.com
-          from: sergimico24@gmail.com
-          body: Error en el job de jest
+        run: echo "Error en el test"
+        # uses: dawidd6/action-send-mail@v3
+        # with:
+        #   server_address: smtp.gmail.com
+        #   server_port: 465
+        #   secure: true
+        #   username: ${{secrets.MAIL_USERNAME}}
+        #   password: ${{secrets.MAIL_PASSWORD}}
+        #   subject: Error jest
+        #   to: sergimicoortiz@gmail.com
+        #   from: sergimico24@gmail.com
+        #   body: Error en el job de jest
